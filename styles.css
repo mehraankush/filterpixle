@@ -34,11 +34,19 @@ body {
     padding-left: 10px;
 }
 
+.gallery_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #gallery {
     display: grid;
     grid-gap: 10px;
     padding: 20px;
-    padding-top: 200px;
+    padding-top: 100px;
+    overflow: hidden;
+    justify-content: center; /* Center the gallery content */
 }
 
 #loading {
@@ -57,14 +65,37 @@ img {
     width: 100%;
     height: auto;
     display: block;
-    height: 400px;
+    height:400px;
     width: 400px;
     padding: 3px;
     object-fit: cover;
-    border-radius: 5px;
-    border: 1px black solid;
+    border-radius: 15px;
+    /* border: 1px black solid; */
 }
 
 .focused {
     border: 3px solid blue;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.searchBar input {
+    padding: 12px;
+    border-radius: 15px;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.tags {
+    font-size: large;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }

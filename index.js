@@ -6,7 +6,7 @@ const loading = document.getElementById('loading');
 const columnsSelect = document.getElementById('columns');
 let currentFocusIndex = -1;
 
-// Fetch images from Pixabay API
+// Fetch images from Api
 async function fetchImages() {
     loading.classList.remove('hidden');
     const response = await fetch(`${API_URL}&page=${currentPage}`);
@@ -17,12 +17,25 @@ async function fetchImages() {
     currentPage++;
 }
 
-// Display images in the gallery
+// Display images in My gallery
 function displayImages(images) {
     images.forEach(image => {
+        const container = document.createElement('div');
+        container.className = 'image-container';
+
         const img = document.createElement('img');
         img.src = image.webformatURL;
-        gallery.appendChild(img);
+        img.alt = "wait.. 🥰";
+        img.dataset.tags = image.tags;
+
+        const tags = document.createElement('div');
+        tags.className = 'tags';
+        tags.classList.add('.tags')
+        tags.innerText = image.tags;
+
+        container.appendChild(img);
+        container.appendChild(tags);
+        gallery.appendChild(container);
     });
 }
 
