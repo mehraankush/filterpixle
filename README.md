@@ -14,5 +14,5 @@ FilterPixle is a dynamic image gallery that fetches images from the Pixabay API 
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/filterpixle.git
+[git clone https://github.com/your-username/filterpixle.git](https://github.com/mehraankush/filterpixle.git)
 cd filterpixle
