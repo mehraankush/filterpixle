@@ -5,6 +5,7 @@ const gallery = document.getElementById('gallery');
 const loading = document.getElementById('loading');
 const columnsSelect = document.getElementById('columns');
 let currentFocusIndex = -1;
+let colums = 3
 
 // Fetch images from Api
 async function fetchImages() {
@@ -41,11 +42,23 @@ function displayImages(images) {
 
 // Update gallery layout based on dropdown selection
 function updateGalleryColumns() {
-    const columns = columnsSelect.value;
+    columns = columnsSelect.value;
     gallery.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+    adjustImageWidth(columns);
 }
 
 columnsSelect.addEventListener('change', updateGalleryColumns);
+
+function adjustImageWidth(numColumns) {
+    const images = document.querySelectorAll('#gallery img');
+    const galleryWidth = gallery.clientWidth;
+    const imageWidth = (galleryWidth - (numColumns - 1) * 10) / numColumns; // Subtracting gaps
+    console.log(imageWidth)
+    images.forEach(image => {
+        image.style.width = `${imageWidth}px`;
+        image.style.height = `${imageWidth}px`;
+    });
+}
 
 // Infinite scrolling and lazy loading
 function lazyLoad() {
@@ -54,6 +67,7 @@ function lazyLoad() {
     if (lastImage && lastImage.getBoundingClientRect().bottom <= window.innerHeight) {
         fetchImages();
     }
+    adjustImageWidth(columns)
 }
 // Infinite scrolling
 function infiniteScroll() {
