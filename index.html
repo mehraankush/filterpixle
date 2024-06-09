@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterPixle Infinite Scroll Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="controls">
+        <label for="columns">Images per row:</label>
+        <select id="columns" name="columns">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+    <input type="text" id="search" placeholder="Search images by tags">
+    <div id="gallery"></div>
+    <div id="loading" class="hidden">
+        <img src="./loader.svg" alt="Loading Spinner">
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

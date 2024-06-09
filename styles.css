@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+#controls {
+    position: sticky;
+    top: 0;
+    margin: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+#controls label {
+    font-weight: 500;
+    font-style: oblique;
+}
+
+#controls select {
+    font-weight: 500;
+    font-style: oblique;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#gallery {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    padding-top: 200px;
+}
+
+#loading {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: 400px;
+    width: 400px;
+    padding: 3px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px black solid;
+}
+
+.focused {
+    border: 3px solid blue;
+}
